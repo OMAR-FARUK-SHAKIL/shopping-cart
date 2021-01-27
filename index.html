@@ -25,9 +25,10 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="" class="btn btn-default minus"><i class="fas fa-minus"></i></button>
-                           <input id="plusValue" type="text" class="form-control text-center" value="1">
-                           <button id="" class="btn btn-default plus"><i class="fas fa-plus"></i></button>
+
+                           <button id="minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="plusValue" type="text" class="  form-control text-center" value="1">
+                           <button id="plus" class="btn btn-default "><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +44,10 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="" class="btn btn-default minus"><i class="fas fa-minus"></i></button>
-                           <input id="plusValue" type="text" class="form-control text-center" value="1">
-                           <button  class="btn btn-default plus"><i id="plus+" class="fas fa-plus"></i></button>
+
+                           <button id="minus2" class="btn btn-default "><i class="fas fa-minus"></i></button>
+                           <input id="plusValue2" type="text" class=" plusValue form-control text-center" value="1">
+                           <button  id=" plus2" class="btn btn-default"><i  class="lol fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -80,15 +82,72 @@
 
    <!--Javascript start here-->
    <script>
-     const plusBtn = document.getElementById("plus+");
-     plusBtn.addEventListener("click",function(){
-        const plusSign = document.getElementById("plusValue").value;
-        console.log(plusSign);
-        const addPlus = parseFloat(plusSign);
-        addPlus++ ;
-        document.getElementById("plusValue").value = addPlus;
-        console.log(addPlus);
-     })
+      //minus operation
+      const p = document.getElementById("minus");
+      p.addEventListener("click",function (){
+         //console.log("hello");
+         const q = document.getElementById("plusValue").value;
+         
+         var r = parseFloat(q);
+         r = r-1;
+         document.getElementById("plusValue").value=r;
+         //console.log(r);
+
+      });
+
+//plus operation
+      const z = document.getElementById("plus");
+      z.addEventListener("click",function (){
+         //console.log("hello");
+         const q = document.getElementById("plusValue").value;
+         
+         var r = parseFloat(q);
+         r = r+1;
+         document.getElementById("plusValue").value=r;
+         //console.log(r);
+
+      });
+
+      //2nd module minus operation
+      const b = document.getElementById("minus2");
+      b.addEventListener("click",function (){
+         //console.log("hello");
+         const q = document.getElementById("plusValue2").value;
+         
+         var r = parseFloat(q);
+         r = r-1;
+         document.getElementById("plusValue2").value=r;
+         //console.log(r);
+
+      });
+
+   
+      let n = document.getElementById("plus2");
+      n.addEventListener("mouseover",function (){
+         //console.log("hello");
+         const q = document.getElementById("plusValue2").value;
+         
+         var r = parseFloat(q);
+         r = r+1;
+         document.getElementById("plusValue2").value=r;
+         //console.log(r);
+
+      });
+
+      // //2nd module plus operation
+      // let k = document.getElementById("plus2");
+      // k.addEventListener("click",function (){
+      //    //console.log("hello");
+      //    const q = document.getElementById("plusValue2").value;
+         
+      //    var r = parseFloat(q);
+      //    r = r+1;
+      //    document.getElementById("plusValue2").value=r;
+      //    //console.log(r);
+      // });
+
+
+
    </script>
 </body>
 
