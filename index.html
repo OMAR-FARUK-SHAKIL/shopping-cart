@@ -26,11 +26,11 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
 
-                           <button id="minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="plusValue" type="text" class="  form-control text-center" value="1">
-                           <button id="plus" class="btn btn-default "><i class="fas fa-plus"></i></button>
+                           <button id="Phone-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phone-quantity" type="text" class="  form-control text-center" value="1">
+                           <button id="Phone-increase" class="btn btn-default "><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$  <span id="phone-price">1219</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -45,12 +45,12 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
 
-                           <button id="minus2" class="btn btn-default "><i class="fas fa-minus"></i></button>
-                           <input id="plusValue2" type="text" class=" plusValue form-control text-center" value="1">
-                           <button  id=" plus2" class="btn btn-default"><i  class="lol fas fa-plus"></i></button>
+                           <button id="case-decrease" class="btn btn-default "><i class="fas fa-minus"></i></button>
+                           <input id="case-quantity" type="text" class=" plusValue form-control text-center" value="1">
+                           <button id="case-increase" class="btn btn-default"><i  class="lol fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="case-price">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -66,9 +66,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$<span id="total">1278</span></h5>
+                        <h5>$<span id="tax">0</span></h5>
+                        <h5>$<span id="grandTotal">1278</span> </h5>
                      </div>
                   </div>
                </div>
@@ -82,6 +82,83 @@
 
    <!--Javascript start here-->
    <script>
+
+      let phoneInput = document.getElementById("Phone-increase");
+      phoneInput.addEventListener('click',function(){
+         let PhoneCount = document.getElementById('phone-quantity');
+         let newPhoneCount = parseInt(PhoneCount.value);
+         let newCount = newPhoneCount + 1;
+         document.getElementById('phone-quantity').value=newCount;
+         //phone Rate
+         // let phonePrice = document.getElementById('phone-price').innerText;
+         // let phoneCost = parseInt(phonePrice);
+         // console.log(phoneCost);
+         // let newPhonePrice = phonePrice*newCount;
+         // document.getElementById('phone-price').innerText=newPhonePrice;
+         document.getElementById('phone-price').innerText=newCount*1219;
+         getTotal();
+
+      });
+
+      let phoneInput2 = document.getElementById("Phone-decrease");
+      phoneInput2.addEventListener('click',function(){
+         let PhoneCount = document.getElementById('phone-quantity');
+         let newPhoneCount = parseInt(PhoneCount.value);
+         let newCount = newPhoneCount - 1;
+         document.getElementById('phone-quantity').value=newCount;
+         //phone Rate
+         // let phonePrice = document.getElementById('phone-price').innerText;
+         // let phoneCost = parseInt(phonePrice);
+         // console.log(phoneCost);
+         // let newPhonePrice = phonePrice*newCount;
+         // document.getElementById('phone-price').innerText=newPhonePrice;
+         document.getElementById('phone-price').innerText=newCount*1219;
+         getTotal();
+      });
+
+      let phoneInput3 = document.getElementById("case-increase");
+      phoneInput3.addEventListener('click',function increase(){
+         let PhoneCount = document.getElementById('case-quantity');
+         let newPhoneCount = parseInt(PhoneCount.value);
+         let newCount = newPhoneCount + 1;
+         document.getElementById('case-quantity').value=newCount;
+         //case Rate
+         document.getElementById('case-price').innerText=newCount*59;
+         getTotal();
+      });
+
+      let phoneInput4 = document.getElementById("case-decrease");
+      phoneInput4.addEventListener('click',function(){
+         let PhoneCount = document.getElementById('case-quantity');
+         let newPhoneCount = parseInt(PhoneCount.value);
+         let newCount = newPhoneCount - 1;
+         document.getElementById('case-quantity').value=newCount;
+         //case rate
+         document.getElementById('case-price').innerText=newCount*59;
+         getTotal();
+      });
+
+      //total hisab
+      function getTotal(){
+         let phonecostInput = document.getElementById('phone-price').innerText;
+      let phoneCostParse = parseInt(phonecostInput);
+
+      let caseCostInput = document.getElementById('case-price').innerText;
+      let caseCostParse = parseInt(caseCostInput);
+
+      let total = phoneCostParse+caseCostParse;
+      document.getElementById('total').innerText=total;
+
+      let tax = parseInt(total*0.05);
+      document.getElementById('tax').innerText=tax;
+
+      let grandTotal = total + tax;
+      document.getElementById('grandTotal').innerText = grandTotal;
+
+      }
+      
+
+      /*
       //minus operation
       const p = document.getElementById("minus");
       p.addEventListener("click",function (){
@@ -146,7 +223,7 @@
       //    //console.log(r);
       // });
 
-
+         */
 
    </script>
 </body>
